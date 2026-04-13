@@ -5,204 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signature Record</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0 auto;
-        background: white;
-        padding: 16px;
-        display: grid;
-        grid-template-rows: 40px 1fr 40px;
-      }
-
-      header {
-      }
-
-      main {
-        display: grid;
-        grid-template-rows: auto 1fr 70px;
-        justify-content: center;
-        padding: 22px 0;
-        gap: 22px;
-      }
-
-      footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 8px;
-      }
-
-      .title-section {
-        width: 309px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .detail-section {
-        width: 309px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .signature-section {
-        width: 309px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: end;
-        gap: 8px;
-      }
-
-      h1 {
-        font-weight: 600;
-        font-size: 13px;
-        font-family: "Arial";
-        line-height: 150%;
-        letter-spacing: -1%;
-      }
-
-      .title-section > div {
-        width: 309px;
-        height: 50px;
-      }
-
-      .title-section > p {
-        font-family: Arial;
-        font-weight: 700;
-        font-size: 10px;
-        line-height: 150%;
-        letter-spacing: -1%;
-        height: 23px;
-        display: flex;
-        place-content: center;
-        text-align: center;
-      }
-
-      dl {
-        width: 309px;
-      }
-
-      dl > div {
-        display: flex;
-        justify-content: space-between;
-        padding: 4px 20px;
-      }
-
-      dt,
-      dd {
-        font-family: Arial;
-        font-size: 10px;
-        line-height: 150%;
-        letter-spacing: -1%;
-      }
-
-      dt {
-        font-weight: 400;
-      }
-
-      dd {
-        font-weight: 700;
-      }
-
-      .detail-section > p {
-        font-family: Arial;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 150%;
-        letter-spacing: -1%;
-        height: 23px;
-        place-content: center;
-        text-align: center;
-      }
-
-      .signature-section > div {
-        border-top: 1px solid #3e4043;
-        width: 188px;
-      }
-
-      .signature-section > p {
-        font-family: Arial;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 150%;
-        letter-spacing: -1%;
-        height: 31px;
-        place-content: center;
-      }
-
-      footer > p {
-        font-family: Arial;
-        font-weight: 400;
-        font-size: 9.5px;
-        line-height: 200%;
-        letter-spacing: -1%;
-        color: #828181;
-        text-align: center;
-      }
-    </style>
+      body { margin: 0; display: flex; justify-content: center; }
+      body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+      img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
+      * { font-family: Arial, sans-serif; }
+  </style>
   </head>
   <body>
     <header></header>
 
-    <main>
-      <section class="title-section">
-        <h1 class="title">Registro de Firma</h1>
+    <main style="width: 100%; padding-top: 8px; display: flex; align-items: center; flex-direction: column; gap: 22px;">
+      <table style="width: 309px; border-collapse: separate; border-spacing: 0 8px;">
+        <tr>
+          <td>
+            <h1 style="text-align: center; font-weight: 600; font-size: 13px; line-height: 150%; letter-spacing: -1%; margin: 0; height: 20px; place-content: center;">Registro de Firma</h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- Código de barras -->
+            <div style="width: 309px; height: 50px;"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p style="text-align: center; font-weight: 700; height: 23px; font-size: 10px; line-height: 150%; letter-spacing: -1%; margin: 0; place-content: center;">1-517-007643-1</p>
+          </td>
+        </tr>
+      </table>
 
-        <!-- Código de barras -->
-        <div></div>
-
-        <p>1-517-007643-1</p>
-      </section>
-      <section class="detail-section">
-        <dl>
-          <div>
-            <dt>Fecha</dt>
-            <dd>11/04/2021</dd>
-          </div>
-          <div>
-            <dt>Nombre cliente</dt>
-            <dd>Cristian Velasco</dd>
-          </div>
-          <div>
-            <dt>RUT</dt>
-            <dd>18.030.345-6</dd>
-          </div>
-          <div>
-            <dt>Tipo de cuenta</dt>
-            <dd>Cuenta Corriente</dd>
-          </div>
-          <div>
-            <dt>Nombre ejecutivo</dt>
-            <dd>Nelson Donaire Olguin</dd>
-          </div>
-          <div>
-            <dt>RUT ejecutivo</dt>
-            <dd>13.548.469-0</dd>
-          </div>
-          <div>
-            <dt>Sucursal</dt>
-            <dd>587</dd>
-          </div>
-        </dl>
-        <p>**La firma debe coincidir con la del documento de identidad</p>
-      </section>
-      <section class="signature-section">
-        <div></div>
-        <p>Firma cliente</p>
-      </section>
+      <table style="width: 309px; border-collapse: separate; border-spacing: 20px 4px;">
+        <tr>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Fecha</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">03/01/2026</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Nombre cliente</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">Cristian Velasco</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">RUT</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">18.030.345-6</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Tipo de cuenta</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">Cuenta Corriente</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Nombre ejecutivo</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">Nelson Donaire Olguin</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">RUT ejecutivo</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">13.548.469-0</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Sucursal</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">587</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding-top: 16px; height: 23px; font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">**La firma debe coincidir con la del documento de identidad</td>
+        </tr>
+      </table>
     </main>
 
-    <footer>
-      <p>1000_REGISTROFIRMA_183466615_ 010013161633</p>
-    </footer>
+    <footer></footer>
   </body>
 </html>
