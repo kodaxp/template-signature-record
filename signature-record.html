@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signature Record</title>
     <style>
-      html, body { height: 100%; }
-      body { margin: 0; display: flex; justify-content: center; flex-direction: column; padding: 16px; box-sizing: border-box; }
+      body { margin: 0; padding: 16px; box-sizing: border-box; position: relative; height: 297mm; }
       body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
       img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
       * { font-family: Arial, sans-serif; }
@@ -15,8 +14,8 @@
   <body>
     <header style="height: 31px; width: 100%;"></header>
 
-    <main style="width: 100%; flex: 1; padding-top: 8px; display: grid; grid-template-rows: auto auto 1fr; gap: 22px; justify-items: center;">
-      <table style="width: 309px; border-collapse: separate; border-spacing: 0 8px;">
+    <main style="width: 100%; padding-top: 8px;">
+      <table style="width: 309px; border-collapse: separate; border-spacing: 0 8px; margin: 0 auto 22px auto;">
         <tr>
           <td>
             <h1 style="text-align: center; font-weight: 600; font-size: 13px; line-height: 150%; letter-spacing: -1%; margin: 0; height: 20px; place-content: center;">Registro de Firma</h1>
@@ -35,7 +34,7 @@
         </tr>
       </table>
 
-      <table style="width: 309px; border-collapse: separate; border-spacing: 20px 4px;">
+      <table style="width: 309px; border-collapse: separate; border-spacing: 20px 4px; margin: 0 auto 22px auto;">
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Fecha</td>
           <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.date }}</td>
@@ -69,19 +68,14 @@
         </tr>
       </table>
 
-      <table style="align-self: end;">
-        <tr>
-          <td style="display: flex; justify-content: center;">
-            <div style="width: 188px; border-top: 1px solid #3E4043;"></div>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-top: 8px; height: 31px; font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center;">Firma cliente</td>
-        </tr>
-      </table>
-    </main>
+      </main>
 
-    <footer style="height: 35px; width: 100%; margin-top: 36px;">
+    <div style="position: absolute; bottom: 70px; left: 0; right: 0; text-align: center;">
+      <div style="width: 188px; border-top: 1px solid #3E4043; margin: 0 auto;"></div>
+      <p style="padding-top: 8px; font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; margin: 0;">Firma cliente</p>
+    </div>
+
+    <footer style="position: absolute; bottom: 16px; left: 16px; right: 16px; height: 35px;">
       <table style="width: 100%; height: 100%;">
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center; color: #828181;">{{ .Map.signatureRecordDocumentNumberAccountNumber }}</td>
