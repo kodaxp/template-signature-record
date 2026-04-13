@@ -30,7 +30,7 @@
         </tr>
         <tr>
           <td>
-            <p style="text-align: center; font-weight: 700; height: 23px; font-size: 10px; line-height: 150%; letter-spacing: -1%; margin: 0; place-content: center;">1-517-007643-1</p>
+            <p style="text-align: center; font-weight: 700; height: 23px; font-size: 10px; line-height: 150%; letter-spacing: -1%; margin: 0; place-content: center;">{{ .Map.accountNumber }}</p>
           </td>
         </tr>
       </table>
@@ -38,31 +38,31 @@
       <table style="width: 309px; border-collapse: separate; border-spacing: 20px 4px;">
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Fecha</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">03/01/2026</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.date }}</td>
         </tr>
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Nombre cliente</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">Cristian Velasco</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.customerName }}</td>
         </tr>
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">RUT</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">18.030.345-6</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.customerIdNumber }}</td>
         </tr>
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Tipo de cuenta</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">Cuenta Corriente</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.accountType }}</td>
         </tr>
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Nombre ejecutivo</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">Nelson Donaire Olguin</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.executiveName }}</td>
         </tr>
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">RUT ejecutivo</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">13.548.469-0</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.executiveIdNumber }}</td>
         </tr>
         <tr>
           <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Sucursal</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">587</td>
+          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.branch }}</td>
         </tr>
         <tr>
           <td colspan="2" style="padding-top: 16px; height: 23px; font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">**La firma debe coincidir con la del documento de identidad</td>
@@ -84,7 +84,7 @@
     <footer style="height: 35px; width: 100%; margin-top: 36px;">
       <table style="width: 100%; height: 100%;">
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center; color: #828181;">1000_REGISTROFIRMA_183466615_ 010013161633</td>
+          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center; color: #828181;">{{ .Map.signatureRecordDocumentNumberAccountNumber }}</td>
         </tr>
       </table>
     </footer>
