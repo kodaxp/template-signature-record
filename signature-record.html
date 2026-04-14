@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signature Record</title>
-    <style>
-      body { margin: 0; padding: 16px; box-sizing: border-box; position: relative; height: 297mm; }
+    <style type="text/css">
+      body { width: 60%; margin: 0 auto; padding: 16px; box-sizing: border-box; position: relative; height: 297mm; }
       body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
       img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
       * { font-family: Arial, sans-serif; }
@@ -13,14 +13,52 @@
       @media print {
         html, body { width: 216mm; height: 279mm; margin: 0; padding: 16px; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       }
+
+      /* Header */
+      .header { height: 31px; width: 100%; padding: 4px 0; box-sizing: border-box; }
+      .header-table { width: 100%; height: 100%; }
+      .logo-container { width: 66px; height: 23px; }
+
+      /* Main */
+      .main { width: 100%; padding-top: 8px; }
+
+      /* Title table */
+      .title-table { width: 309px; border-collapse: separate; border-spacing: 0 8px; margin: 0 auto 22px auto; }
+      .title { text-align: center; font-weight: 600; margin: 0; height: 20px; place-content: center; }
+      .barcode-container { width: 309px; height: 50px; }
+      .account-number { text-align: center; font-weight: 700; height: 23px; margin: 0; place-content: center; }
+
+      /* Info table */
+      .w-309 { width: 100%; max-width: 70%; }
+      .info-table { border-collapse: separate; border-spacing: 20px 4px; margin: 0 auto 22px auto; }
+      .info-table tr { width: 100%; }
+      .info-label { font-weight: 400; width: auto; }
+      .info-value { font-weight: 700; text-align: right; width: auto; }
+      .info-disclaimer { padding-top: 16px; height: 23px; font-weight: 400; width: 100%; }
+
+      /* Signature section */
+      .signature-section { position: absolute; bottom: 70px; left: 0; right: 0; text-align: center; }
+      .signature-line { width: 188px; border-top: 1px solid #3E4043; margin: 0 auto; }
+      .signature-label { padding-top: 8px; font-weight: 400; margin: 0; }
+
+      /* Footer */
+      .footer { position: absolute; bottom: 16px; left: 16px; right: 16px; height: 35px; }
+      .footer-table { width: 100%; height: 100%; }
+      .footer-cell { font-weight: 400; text-align: center; color: #828181; }
+      /* Font sizes */
+      .fs-10 { font-size: 16px; }
+      .fs-13 { font-size: 20px; }
+      .fs-28 { font-size: 25px; }
+      .lh-150 { line-height: 150%; }
+      .ls-n1 { letter-spacing: -1%; }
   </style>
   </head>
   <body>
-    <header style="height: 31px; width: 100%; padding: 4px 0; box-sizing: border-box;">
-        <table style="width: 100%; height: 100%;">
+    <header class="header">
+        <table class="header-table">
           <tr>
             <td>
-              <div style="width: 66px; height: 23px;">
+              <div class="logo-container">
                 <svg width="66" height="23" viewBox="0 0 66 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <rect width="65.7143" height="23" fill="url(#pattern0_2499_36785)"/>
                   <defs>
@@ -36,71 +74,71 @@
         </table>
       </header>
 
-    <main style="width: 100%; padding-top: 8px;">
-      <table style="width: 309px; border-collapse: separate; border-spacing: 0 8px; margin: 0 auto 22px auto;">
+    <main class="main">
+      <table class="title-table">
         <tr>
           <td>
-            <h1 style="text-align: center; font-weight: 600; font-size: 13px; line-height: 150%; letter-spacing: -1%; margin: 0; height: 20px; place-content: center;">Registro de Firma</h1>
+            <h1 class="title fs-28 lh-150 ls-n1">Registro de Firma</h1>
           </td>
         </tr>
         <tr>
           <td>
             <!-- Código de barras -->
-            <div style="width: 309px; height: 50px;"></div>
+            <div class="barcode-container"></div>
           </td>
         </tr>
         <tr>
           <td>
-            <p style="text-align: center; font-weight: 700; height: 23px; font-size: 10px; line-height: 150%; letter-spacing: -1%; margin: 0; place-content: center;">{{ .Map.accountNumber }}</p>
+            <p class="account-number fs-10 lh-150 ls-n1">{{ .Map.accountNumber }}</p>
           </td>
         </tr>
       </table>
 
-      <table style="width: 309px; border-collapse: separate; border-spacing: 20px 4px; margin: 0 auto 22px auto;">
+      <table class="info-table w-309">
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Fecha</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.date }}</td>
+          <td class="info-label fs-10 lh-150 ls-n1">Fecha</td>
+          <td class="info-value fs-10 lh-150 ls-n1">{{ .Map.date }}</td>
         </tr>
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Nombre cliente</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.customerName }}</td>
+          <td class="info-label fs-10 lh-150 ls-n1">Nombre cliente</td>
+          <td class="info-value fs-10 lh-150 ls-n1">{{ .Map.customerName }}</td>
         </tr>
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">RUT</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.customerIdNumber }}</td>
+          <td class="info-label fs-10 lh-150 ls-n1">RUT</td>
+          <td class="info-value fs-10 lh-150 ls-n1">{{ .Map.customerIdNumber }}</td>
         </tr>
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Tipo de cuenta</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.accountType }}</td>
+          <td class="info-label fs-10 lh-150 ls-n1">Tipo de cuenta</td>
+          <td class="info-value fs-10 lh-150 ls-n1">{{ .Map.accountType }}</td>
         </tr>
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Nombre ejecutivo</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.executiveName }}</td>
+          <td class="info-label fs-10 lh-150 ls-n1">Nombre ejecutivo</td>
+          <td class="info-value fs-10 lh-150 ls-n1">{{ .Map.executiveName }}</td>
         </tr>
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">RUT ejecutivo</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.executiveIdNumber }}</td>
+          <td class="info-label fs-10 lh-150 ls-n1">RUT ejecutivo</td>
+          <td class="info-value fs-10 lh-150 ls-n1">{{ .Map.executiveIdNumber }}</td>
         </tr>
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">Sucursal</td>
-          <td style="font-weight: 700; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: right;">{{ .Map.branch }}</td>
+          <td class="info-label fs-10 lh-150 ls-n1">Sucursal</td>
+          <td class="info-value fs-10 lh-150 ls-n1">{{ .Map.branch }}</td>
         </tr>
         <tr>
-          <td colspan="2" style="padding-top: 16px; height: 23px; font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%;">**La firma debe coincidir con la del documento de identidad</td>
+          <td colspan="2" class="info-disclaimer fs-10 lh-150 ls-n1">**La firma debe coincidir con la del documento de identidad</td>
         </tr>
       </table>
 
       </main>
 
-    <div style="position: absolute; bottom: 70px; left: 0; right: 0; text-align: center;">
-      <div style="width: 188px; border-top: 1px solid #3E4043; margin: 0 auto;"></div>
-      <p style="padding-top: 8px; font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; margin: 0;">Firma cliente</p>
+    <div class="signature-section">
+      <div class="signature-line"></div>
+      <p class="signature-label fs-10 lh-150 ls-n1">Firma cliente</p>
     </div>
 
-    <footer style="position: absolute; bottom: 16px; left: 16px; right: 16px; height: 35px;">
-      <table style="width: 100%; height: 100%;">
+    <footer class="footer">
+      <table class="footer-table">
         <tr>
-          <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center; color: #828181;">{{ .Map.signatureRecordDocumentNumberAccountNumber }}</td>
+          <td class="footer-cell fs-10 lh-150 ls-n1">{{ .Map.signatureRecordDocumentNumberAccountNumber }}</td>
         </tr>
       </table>
     </footer>
