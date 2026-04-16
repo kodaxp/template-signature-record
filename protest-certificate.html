@@ -13,15 +13,52 @@
       @media print {
         html, body { width: 216mm; height: 279mm; margin: 0; padding: 16px; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       }
-  </style>
+
+      /* Secciones */
+      section { height: 139.5mm; box-sizing: border-box; padding: 16px; }
+      section > header { height: 31px; width: 100%; padding: 4px 0; box-sizing: border-box; }
+      section > main { width: 100%; margin: 40px 0; }
+      section > footer { height: 35px; }
+
+      /* Tablas */
+      .table-full { width: 100%; height: 100%; }
+      .logo-wrap { width: 66px; height: 23px; }
+      .data-table { width: 453px; border-collapse: separate; border-spacing: 0 2px; margin: 0 auto 22px auto; border: 1px solid black; }
+      .inner-table { width: 100%; }
+
+      /* Título del acta */
+      .td-title { text-align: center; font-weight: 600; font-size: 8px; line-height: 100%; letter-spacing: 0; margin: 0; }
+      .span-mr { margin-right: 10px; }
+
+      /* Celdas de datos */
+      .td-section-head { padding: 0 12px; font-size: 7px; font-weight: 700; line-height: 150%; letter-spacing: -1%; }
+      .td-label { padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%; }
+      .td-value { padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%; }
+
+      /* Área de firma */
+      .td-sign-space { padding: 40px 12px 1px; }
+      .sign-line { border-top: 1px solid #3E4043; width: 100%; }
+      .td-sign-label { padding: 1px 12px; text-align: center; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%; }
+
+      /* Separador de columna */
+      .td-col-divider { padding: 0 12px; height: 12.5px; }
+      .divider-light { border-top: 1px solid #A9B1BB; width: 100%; }
+
+      /* Pie de página */
+      .td-footer-text { font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center; color: #828181; }
+      .copy-label { text-align: right; font-style: italic; font-weight: 400; font-size: 10px; line-height: 100%; letter-spacing: 0; margin: 0; padding: 0 12px; }
+
+      /* Separador de página */
+      .page-sep { position: absolute; width: calc(100% + 32px); border-top: 1px dashed #6A6A6A; top: 139.5mm; left: -16px; }
+    </style>
   </head>
   <body>
-    <section style="height: 139.5mm; box-sizing: border-box; padding: 16px;">
-      <header style="height: 31px; width: 100%; padding: 4px 0; box-sizing: border-box;">
-        <table style="width: 100%; height: 100%;">
+    <section>
+      <header>
+        <table class="table-full">
           <tr>
             <td>
-              <div style="width: 66px; height: 23px;">
+              <div class="logo-wrap">
                 <svg width="66" height="23" viewBox="0 0 66 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <rect width="65.7143" height="23" fill="url(#pattern0_2499_36785)"/>
                   <defs>
@@ -36,124 +73,124 @@
           </tr>
         </table>
       </header>
-      <main style="width: 100%; margin: 40px 0;">
-        <table style="width: 453px; border-collapse: separate; border-spacing: 0 2px; margin: 0 auto 22px auto; border: 1px solid black;">
+      <main>
+        <table class="data-table">
           <tr>
-            <td colspan="2" style="text-align: center; font-weight: 600; font-size: 8px; line-height: 100%; letter-spacing: 0; margin: 0;">
-              <span style="margin-right: 10px;">Acta de Protesto </span>
-              <span style="margin-right: 10px;">D.L3475</span>
+            <td colspan="2" class="td-title">
+              <span class="span-mr">Acta de Protesto </span>
+              <span class="span-mr">D.L3475</span>
               <span>$0</span>
             </td>
           </tr>
           <tr>
             <td width="50%">
-              <table style="width: 100%;">
+              <table class="inner-table">
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; font-size: 7px; font-weight: 700; line-height: 150%; letter-spacing: -1%;">El Banco Falabella no paga el presente cheque:</td>
+                  <td colspan="2" class="td-section-head">El Banco Falabella no paga el presente cheque:</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Serie</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">1</td>
+                  <td class="td-label">Serie</td>
+                  <td class="td-value">{{ .Map.serie }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Motivo</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Cuenta cerrada</td>
+                  <td class="td-label">Motivo</td>
+                  <td class="td-value">{{ .Map.reason }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Monto</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">$2.641.687</td>
+                  <td class="td-label">Monto</td>
+                  <td class="td-value">{{ .Map.amount }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Cuenta Corriente</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">01-558-0021129-9</td>
+                  <td class="td-label">Cuenta Corriente</td>
+                  <td class="td-value">{{ .Map.checkingAccount }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Fecha</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">10/03/2026</td>
+                  <td class="td-label">Fecha</td>
+                  <td class="td-value">{{ .Map.date }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Hora</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">09:01</td>
+                  <td class="td-label">Hora</td>
+                  <td class="td-value">{{ .Map.time }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Lugar</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Santiago</td>
+                  <td class="td-label">Lugar</td>
+                  <td class="td-value">{{ .Map.place }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Sucursal</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">587</td>
+                  <td class="td-label">Sucursal</td>
+                  <td class="td-value">{{ .Map.branch }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 40px 12px 1px;"><div style="border-top: 1px solid #3E4043; width: 100%;"></div></td>
+                  <td colspan="2" class="td-sign-space"><div class="sign-line"></div></td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 1px 12px; text-align: center; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Firma del portador</td>
+                  <td colspan="2" class="td-sign-label">Firma del portador</td>
                 </tr>
               </table>
-            </td>
+            </td>|
             <td width="50%">
-              <table style="width: 100%;">
+              <table class="inner-table">
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; font-size: 7px; font-weight: 700; line-height: 150%; letter-spacing: -1%;">Perteneciente a:</td>
+                  <td colspan="2" class="td-section-head">Perteneciente a:</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Nombre</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Christopher Pichuantte Suarez</td>
+                  <td class="td-label">Nombre</td>
+                  <td class="td-value">{{ .Map.subjectFullName }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">RUT</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">17.763.921-4</td>
+                  <td class="td-label">RUT</td>
+                  <td class="td-value">{{ .Map.subjectIdNumber }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Domicilio</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Temu 965 Casa, Colina, Santiago</td>
+                  <td class="td-label">Domicilio</td>
+                  <td class="td-value">{{ .Map.subjectAddress }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; font-size: 7px; font-weight: 700; line-height: 150%; letter-spacing: -1%;">Suscrito en su representación por:</td>
+                  <td colspan="2" class="td-section-head">Suscrito en su representación por:</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Nombre</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Christopher Pichuantte Suarez</td>
+                  <td class="td-label">Nombre</td>
+                  <td class="td-value">{{ .Map.legalRepresentativeFullName }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">RUT</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">17.763.921-4</td>
+                  <td class="td-label">RUT</td>
+                  <td class="td-value">{{ .Map.legalRepresentativeIdNumber }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; height: 12.5px"><div style="border-top: 1px solid #A9B1BB; width: 100%;"></div></td>
+                  <td colspan="2" class="td-col-divider"><div class="divider-light"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Ejecutivo</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Nelson Donaire Olguin</td>
+                  <td class="td-label">Ejecutivo</td>
+                  <td class="td-value">{{ .Map.executiveFullName }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 40px 12px 1px;"><div style="border-top: 1px solid #3E4043; width: 100%;"></div></td>
+                  <td colspan="2" class="td-sign-space"><div class="sign-line"></div></td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 1px 12px; text-align: center; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">P.P. Banco Falabella </td>
+                  <td colspan="2" class="td-sign-label">P.P. Banco Falabella </td>
                 </tr>
               </table>
             </td>
           </tr>
         </table>
       </main>
-      <footer style="height: 35px;">
-        <table style="width: 100%; height: 100%;">
+      <footer>
+        <table class="table-full">
           <tr>
-            <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center; color: #828181;">1000_ACTADEPROTESTO_183466615_ 010013161633</td>
+            <td class="td-footer-text">{{ .Map.signatureRecordDocumentNumberAccountNumber }}</td>
           </tr>
         </table>
       </footer>
     </section>
     <!-- Separador -->
-    <div style="position: absolute; width: calc(100% + 32px); border-top: 1px dashed #6A6A6A; top: 139.5mm; left: -16px;"></div>
+    <div class="page-sep"></div>
 
-    <section style="height: 139.5mm; padding: 16px; box-sizing: border-box;">
-      <header style="height: 31px; width: 100%; padding: 4px 0; box-sizing: border-box;">
-        <table style="width: 100%; height: 100%;">
+    <section>
+      <header>
+        <table class="table-full">
           <tr>
             <td>
-              <div style="width: 66px; height: 23px;">
+              <div class="logo-wrap">
                 <svg width="66" height="23" viewBox="0 0 66 23" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <rect width="65.7143" height="23" fill="url(#pattern0_2499_36785)"/>
                   <defs>
@@ -165,115 +202,115 @@
                 </svg>
               </div>
             </td>
-            <td width="50%" style="text-align: right; font-style: italic; font-weight: 400; font-size: 10px; line-height: 100%; letter-spacing: 0; margin: 0; padding: 0 12px;">Copia cliente</td>
+            <td width="50%" class="copy-label">Copia cliente</td>
           </tr>
         </table>
       </header>
-      <main style="width: 100%; margin: 40px 0;">
-        <table style="width: 453px; border-collapse: separate; border-spacing: 0 2px; margin: 0 auto 22px auto; border: 1px solid black;">
+      <main>
+        <table class="data-table">
           <tr>
-            <td colspan="2" style="text-align: center; font-weight: 600; font-size: 8px; line-height: 100%; letter-spacing: 0; margin: 0;">
-              <span style="margin-right: 10px;">Acta de Protesto </span>
-              <span style="margin-right: 10px;">D.L3475</span>
+            <td colspan="2" class="td-title">
+              <span class="span-mr">Acta de Protesto </span>
+              <span class="span-mr">D.L3475</span>
               <span>$0</span>
             </td>
           </tr>
           <tr>
             <td width="50%">
-              <table style="width: 100%;">
+              <table class="inner-table">
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; font-size: 7px; font-weight: 700; line-height: 150%; letter-spacing: -1%;">El Banco Falabella no paga el presente cheque:</td>
+                  <td colspan="2" class="td-section-head">El Banco Falabella no paga el presente cheque:</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Serie</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">1</td>
+                  <td class="td-label">Serie</td>
+                  <td class="td-value">{{ .Map.series }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Motivo</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Cuenta cerrada</td>
+                  <td class="td-label">Motivo</td>
+                  <td class="td-value">{{ .Map.reason }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Monto</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">$2.641.687</td>
+                  <td class="td-label">Monto</td>
+                  <td class="td-value">{{ .Map.amount }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Cuenta Corriente</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">01-558-0021129-9</td>
+                  <td class="td-label">Cuenta Corriente</td>
+                  <td class="td-value">{{ .Map.checkingAccount }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Fecha</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">10/03/2026</td>
+                  <td class="td-label">Fecha</td>
+                  <td class="td-value">{{ .Map.date }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Hora</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">09:01</td>
+                  <td class="td-label">Hora</td>
+                  <td class="td-value">{{ .Map.time }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Lugar</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Santiago</td>
+                  <td class="td-label">Lugar</td>
+                  <td class="td-value">{{ .Map.place }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Sucursal</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">587</td>
+                  <td class="td-label">Sucursal</td>
+                  <td class="td-value">{{ .Map.branch }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 40px 12px 1px;"><div style="border-top: 1px solid #3E4043; width: 100%;"></div></td>
+                  <td colspan="2" class="td-sign-space"><div class="sign-line"></div></td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 1px 12px; text-align: center; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Firma del portador</td>
+                  <td colspan="2" class="td-sign-label">Firma del portador</td>
                 </tr>
               </table>
             </td>
             <td width="50%">
-              <table style="width: 100%;">
+              <table class="inner-table">
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; font-size: 7px; font-weight: 700; line-height: 150%; letter-spacing: -1%;">Perteneciente a:</td>
+                  <td colspan="2" class="td-section-head">Perteneciente a:</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Nombre</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Christopher Pichuantte Suarez</td>
+                  <td class="td-label">Nombre</td>
+                  <td class="td-value">{{ .Map.subjectFullName }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">RUT</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">17.763.921-4</td>
+                  <td class="td-label">RUT</td>
+                  <td class="td-value">{{ .Map.subjectIdNumber }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Domicilio</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Temu 965 Casa, Colina, Santiago</td>
+                  <td class="td-label">Domicilio</td>
+                  <td class="td-value">{{ .Map.subjectAddress }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; font-size: 7px; font-weight: 700; line-height: 150%; letter-spacing: -1%;">Suscrito en su representación por:</td>
+                  <td colspan="2" class="td-section-head">Suscrito en su representación por:</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Nombre</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Christopher Pichuantte Suarez</td>
+                  <td class="td-label">Nombre</td>
+                  <td class="td-value">{{ .Map.legalRepresentativeFullName }}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">RUT</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">17.763.921-4</td>
+                  <td class="td-label">RUT</td>
+                  <td class="td-value">{{ .Map.legalRepresentativeIdNumber }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 0 12px; height: 12.5px"><div style="border-top: 1px solid #A9B1BB; width: 100%;"></div></td>
+                  <td colspan="2" class="td-col-divider"><div class="divider-light"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding: 1px 0 1px 12px; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">Ejecutivo</td>
-                  <td style="padding: 1px 12px 1px 0; text-align: right; font-size: 7px; font-weight: 600; line-height: 150%; letter-spacing: -1%;">Nelson Donaire Olguin</td>
+                  <td class="td-label">Ejecutivo</td>
+                  <td class="td-value">{{ .Map.executiveFullName }}</td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 40px 12px 1px;"><div style="border-top: 1px solid #3E4043; width: 100%;"></div></td>
+                  <td colspan="2" class="td-sign-space"><div class="sign-line"></div></td>
                 </tr>
                 <tr>
-                  <td colspan="2" style="padding: 1px 12px; text-align: center; font-size: 7px; font-weight: 400; line-height: 150%; letter-spacing: -1%;">P.P. Banco Falabella </td>
+                  <td colspan="2" class="td-sign-label">P.P. Banco Falabella </td>
                 </tr>
               </table>
             </td>
           </tr>
         </table>
       </main>
-      <footer style="height: 35px;">
-        <table style="width: 100%; height: 100%;">
+      <footer>
+        <table class="table-full">
           <tr>
-            <td style="font-weight: 400; font-size: 10px; line-height: 150%; letter-spacing: -1%; text-align: center; color: #828181;">1000_ACTADEPROTESTO_183466615_ 010013161633</td>
+            <td class="td-footer-text">{{ .Map.signatureRecordDocumentNumberAccountNumber }}</td>
           </tr>
         </table>
       </footer>
